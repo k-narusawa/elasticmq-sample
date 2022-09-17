@@ -1,0 +1,11 @@
+version: "3"
+services:
+  elasticmq:
+    container_name: elasticmq
+    image: softwaremill/elasticmq-native
+    volumes:
+      # 設定ファイル
+      - ./elasticmq/custom.conf://opt/elasticmq.conf:ro
+    ports:
+      - "9324:9324"
+      - "9325:9325"
